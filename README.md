@@ -1,0 +1,2 @@
+# nvim-rc
+nvim configure
