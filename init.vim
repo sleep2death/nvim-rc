@@ -228,7 +228,7 @@ map <C-l> <C-W>l
 " map <leader>tc :tabclose<cr>
 " map <leader>tm :tabmove
 " map <leader>t<leader> :tabnext
-"
+" 
 " " Let 'tl' toggle between this and the last accessed tab
 " let g:lasttab = 1
 " nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
@@ -238,10 +238,10 @@ map <C-l> <C-W>l
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
 " map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
-"
+" 
 " " Switch CWD to the directory of the open buffer
 " map <leader>cd :cd %:p:h<cr>:pwd<cr>
-"
+" 
 " " Specify the behavior when switching between buffers
 " try
 "   set switchbuf=useopen,usetab,newtab
