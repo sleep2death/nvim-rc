@@ -24,3 +24,6 @@ RUN yarn config set registry https://registry.npm.taobao.org/ \
     && nvim --headless +PlugInstall +qall
 
 WORKDIR /root/workspace
+
+# Avoid container exit.
+CMD ["tail", "-f", "/dev/null"]

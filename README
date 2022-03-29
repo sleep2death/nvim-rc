@@ -1,3 +1,4 @@
 docker run -d -v /home/aspirin2d/TAE/redis:/data --name redis redislabs/rejson:latest
 docker build -t aspirin2d/dev .
-docker run -ti --link redis -v /home/aspirin2d/TAE:/root/workspace -p 8080:3000 -p 1234:1234 aspirin2d/dev
+docker run -d --link redis -v /home/aspirin2d/tae:/root/workspace -p 8080:3000 -p 1234:1234 --name app aspirin2d/dev
+docker exec -it app /usr/bin/fish
