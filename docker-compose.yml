@@ -2,14 +2,14 @@ version: '3.3'
 services:
   redis:
     image: redislabs/rejson:latest
-    volumns:
+    volumes:
       - ./redis:/data
   dev:
     restart: on-failure
-    build .
-    enviroment:
+    build: .
+    environment:
       - redis=redis://redis:6379
-    volumns:
+    volumes:
       - ./workspace:/root/workspace
     ports:
       - '8080:3000'
