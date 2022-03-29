@@ -1,7 +1,7 @@
 FROM alpine:3.15.3
 
 ENV redis redis://redis:6379
-EXPOSE 3000
+EXPOSE 3000 1234
 
 RUN apk add --no-cache sed \
     && sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories \
@@ -24,5 +24,3 @@ RUN yarn config set registry https://registry.npm.taobao.org/ \
     && nvim --headless +PlugInstall +qall
 
 WORKDIR /root/workspace
-# Avoid container exit.
-CMD ["tail", "-f", "/dev/null"]
