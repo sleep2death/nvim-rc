@@ -1,0 +1,3 @@
+docker run -d --name redis redislabs/rejson:latest
+docker build -t aspirin2d/dev .
+docker run -ti -d --link redis -p 8080:3000 -v /mnt/d/workspace:/root/workspace --name dev aspirin2d/dev
