@@ -17,8 +17,9 @@ RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs https
 
 # Install Neovim extensions.
 RUN yarn config set registry https://registry.npm.taobao.org/ \
-    && nvim --headless +PlugInstall +qall \
-    && nvim --headless +"TSInstallSync maintained" +"CocInstall $COC -sync" +qall \
+    && nvim --headless +PlugInstall +qall
+RUN nvim --headless +"TSInstallSync maintained" +qall
+RUN nvim --headless +"CocInstall $COC -sync" +qall
 
 WORKDIR /root/workspace
 
