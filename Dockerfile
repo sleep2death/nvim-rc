@@ -5,9 +5,7 @@ EXPOSE 3000 1234
 
 ARG COC='coc-css coc-pairs coc-html coc-json coc-prettier coc-tsserver coc-yaml'
 
-RUN apk add --no-cache sed \
-    && sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
-RUN apk add --no-cache curl ripgrep tree-sitter git python3 py3-pip fd nodejs npm yarn fish neovim g++ make \
+RUN apk update && apk add --no-cache curl ripgrep git python3 py3-pip fd nodejs npm yarn fish neovim g++ make \
     && yarn global add neovim
 
 COPY ./root/ /root/
